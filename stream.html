@@ -3,72 +3,66 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Прямой эфир — Трансляция</title>
+  <title>Twitch Stream</title>
   <style>
     body {
       margin: 0;
-      padding: 40px;
-      background-color: #fafafa; /* твой светло-серый фон */
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      color: #333;
+      padding: 0;
+      background-color: #0e0e10;
+      height: 100vh;
+      display: flex;
     }
 
     .container {
-      max-width: 1200px;
-      margin: 0 auto;
       display: flex;
-      gap: 30px;
-      justify-content: center;
-      align-items: flex-start;
+      width: 100%;
+      height: 100vh;
+      gap: 10px;
+      padding: 10px;
+      box-sizing: border-box;
     }
 
     .stream-container {
-      flex: 2;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* тонкая тень — как ты любишь */
-      border-radius: 8px;
-      overflow: hidden;
-      background: white;
+      flex: 1;
+      height: 100%;
     }
 
     .chat-container {
-      flex: 1;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-      border-radius: 8px;
-      overflow: hidden;
-      background: white;
+      width: 400px;
+      height: 100%;
     }
 
     iframe {
       border: none;
-      display: block;
+      border-radius: 8px;
       width: 100%;
       height: 100%;
     }
 
-    @media (max-width: 900px) {
+    @media (max-width: 768px) {
       .container {
         flex-direction: column;
-        align-items: center;
       }
+      
       .chat-container {
         width: 100%;
-        max-width: 500px;
+        height: 300px;
+      }
+      
+      .stream-container {
+        height: calc(100vh - 310px);
       }
     }
   </style>
 </head>
 <body>
-
   <div class="container">
-    
     <div class="stream-container">
       <iframe
         src="https://player.twitch.tv/?channel=deerkufa&parent=vvcconverter.github.io"
         frameborder="0"
         scrolling="no"
-        allowfullscreen="true"
-        width="800"
-        height="450">
+        allowfullscreen="true">
       </iframe>
     </div>
 
@@ -76,13 +70,9 @@
       <iframe
         src="https://www.twitch.tv/embed/deerkufa/chat?parent=vvcconverter.github.io"
         frameborder="0"
-        scrolling="no"
-        width="350"
-        height="500">
+        scrolling="no">
       </iframe>
     </div>
-
   </div>
-
 </body>
 </html>
